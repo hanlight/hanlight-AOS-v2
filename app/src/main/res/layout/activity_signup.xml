@@ -53,14 +53,14 @@
         android:layout_width="0dp"
         android:layout_height="44dp"
         android:layout_marginLeft="26dp"
-        android:layout_marginTop="66dp"
         android:layout_marginRight="26dp"
+        android:layout_marginBottom="56dp"
         android:background="@drawable/edittext_style"
         android:hint="제공된 핀 번호를 입력해주세요."
         android:paddingLeft="20dp"
+        app:layout_constraintBottom_toTopOf="@id/phoneEdt"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text" />
+        app:layout_constraintRight_toRightOf="parent"/>
 
     <TextView
         android:id="@+id/text3"
@@ -91,14 +91,15 @@
         android:paddingLeft="20dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/keyEdt" />
+        android:layout_marginBottom="44dp"
+        app:layout_constraintBottom_toTopOf="@id/authBtn"/>
 
     <Button
         android:id="@+id/authBtn"
         android:layout_width="0dp"
         android:layout_height="52dp"
         android:layout_marginLeft="27dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginBottom="7dp"
         android:layout_marginRight="27dp"
         android:background="@drawable/button_style"
         android:fontFamily="@font/bold"
@@ -107,9 +108,10 @@
         android:textSize="14dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/phoneEdt" />
+        app:layout_constraintBottom_toTopOf="@id/text4"/>
 
     <TextView
+        android:layout_marginTop="313dp"
         android:id="@+id/text4"
         style="@style/regularTextStyle"
         android:layout_width="0dp"
@@ -121,7 +123,8 @@
         android:text="전화번호 인증 시 이용 약관과 개인정보처리방침에 동의하게 됩니다."
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
