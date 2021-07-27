@@ -4,23 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignupActivity">
+    tools:context=".SignupActivity2">
 
     <ImageView
-        android:id="@+id/hanlightLogo_Signup1"
+        android:id="@+id/hanlightLogo_Signup2"
         android:layout_width="0dp"
         android:layout_height="28dp"
         android:layout_marginLeft="156dp"
         android:layout_marginTop="69dp"
         android:layout_marginRight="156dp"
-        android:contentDescription="@string/logo"
         android:src="@drawable/hanlight_logo"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/logo" />
 
     <TextView
-        android:id="@+id/text_Signup1"
+        android:id="@+id/text_Signup2"
         style="@style/boldTextStyle"
         android:layout_width="0dp"
         android:layout_height="31dp"
@@ -30,69 +30,22 @@
         android:text="@string/signup"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/hanlightLogo_Signup1" />
+        app:layout_constraintTop_toBottomOf="@id/hanlightLogo_Signup2" />
 
     <TextView
-        android:id="@+id/text2_Signup1"
+        android:id="@+id/text2_Signup2"
         style="@style/regularTextStyle"
         android:layout_width="0dp"
         android:layout_height="18dp"
         android:layout_marginStart="30dp"
-        android:layout_marginBottom="8dp"
-        android:gravity="center"
-        android:text="@string/key"
-        android:textColor="#000000"
-        app:layout_constraintBottom_toTopOf="@id/keyEdt_Signup1"
-        app:layout_constraintLeft_toLeftOf="parent" />
-
-    <EditText
-        android:id="@+id/keyEdt_Signup1"
-        style="@style/regularTextStyle"
-        android:layout_width="0dp"
-        android:layout_height="44dp"
-        android:layout_marginLeft="26dp"
-        android:layout_marginRight="26dp"
         android:layout_marginBottom="4dp"
-        android:background="@drawable/edittext_style"
-        android:hint="@string/keyEdt"
-        android:inputType="text"
-        android:paddingStart="20dp"
-        app:layout_constraintBottom_toTopOf="@id/error2_Signup1"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:autofillHints=""
-        tools:ignore="RtlSymmetry" />
-
-
-    <TextView
-        android:id="@+id/error2_Signup1"
-        style="@style/errorTextStyle"
-        android:layout_width="0dp"
-        android:layout_height="17dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="313dp"
-        android:layout_marginBottom="37dp"
         android:gravity="center"
-        android:text="@string/error1"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@id/phoneEdt_Signup1"
-        app:layout_constraintLeft_toLeftOf="parent" />
-
-    <TextView
-        android:id="@+id/text3_Signup1"
-        style="@style/regularTextStyle"
-        android:layout_width="0dp"
-        android:layout_height="18dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginBottom="8dp"
-        android:gravity="center"
-        android:text="@string/phone"
-        android:textColor="#000000"
-        app:layout_constraintBottom_toTopOf="@id/phoneEdt_Signup1"
+        android:text="@string/id"
+        app:layout_constraintBottom_toTopOf="@id/idEdt_Signup2"
         app:layout_constraintLeft_toLeftOf="parent" />
 
     <EditText
-        android:id="@+id/phoneEdt_Signup1"
+        android:id="@+id/idEdt_Signup2"
         style="@style/regularTextStyle"
         android:layout_width="0dp"
         android:layout_height="44dp"
@@ -101,60 +54,133 @@
         android:layout_marginRight="26dp"
         android:layout_marginBottom="4dp"
         android:background="@drawable/edittext_style"
-        android:hint="@string/hint2"
-        android:inputType="number"
+        android:hint="@string/id_hint"
+        android:inputType="text"
         android:paddingStart="20dp"
-        app:layout_constraintBottom_toTopOf="@id/error1_Signup1"
+        app:layout_constraintBottom_toTopOf="@id/error_Signup2"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:autofillHints=""
-        tools:ignore="RtlSymmetry,TextFields" />
+        tools:ignore="RtlSymmetry" />
 
     <TextView
-        android:id="@+id/error1_Signup1"
+        android:id="@+id/error_Signup2"
         style="@style/errorTextStyle"
         android:layout_width="0dp"
         android:layout_height="17dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="313dp"
-        android:layout_marginBottom="25dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="33dp"
         android:gravity="center"
-        android:text="@string/error2"
+        android:text="@string/error3"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@id/authBtn_Signup1"
+        app:layout_constraintBottom_toTopOf="@id/pswEdt_Signup2"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <TextView
+        android:id="@+id/text3_Signup2"
+        style="@style/regularTextStyle"
+        android:layout_width="0dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="4dp"
+        android:gravity="center"
+        android:text="@string/password"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toTopOf="@id/pswEdt_Signup2"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <EditText
+        android:id="@+id/pswEdt_Signup2"
+        style="@style/regularTextStyle"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginRight="26dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/edittext_style"
+        android:hint="@string/psw_hint"
+        android:inputType="textPassword"
+        android:paddingStart="20dp"
+        app:layout_constraintBottom_toTopOf="@id/error1_Signup2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:autofillHints=""
+        tools:ignore="RtlSymmetry" />
+
+    <TextView
+        android:id="@+id/error1_Signup2"
+        style="@style/errorTextStyle"
+        android:layout_width="0dp"
+        android:layout_height="17dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="33dp"
+        android:gravity="center"
+        android:text="@string/error4"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@id/rePswEdt_Signup2"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <TextView
+        android:id="@+id/text4_Signup2"
+        style="@style/regularTextStyle"
+        android:layout_width="0dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="4dp"
+        android:gravity="center"
+        android:text="@string/check_psw"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toTopOf="@id/rePswEdt_Signup2"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <EditText
+        android:id="@+id/rePswEdt_Signup2"
+        style="@style/regularTextStyle"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginRight="26dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/edittext_style"
+        android:inputType="textPassword"
+        android:paddingStart="20dp"
+        app:layout_constraintBottom_toTopOf="@id/error2_Signup2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:autofillHints=""
+        tools:ignore="LabelFor,RtlSymmetry" />
+
+    <TextView
+        android:id="@+id/error2_Signup2"
+        style="@style/errorTextStyle"
+        android:layout_width="0dp"
+        android:layout_height="17dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:text="@string/error5"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@id/signupBtn_Signup2"
         app:layout_constraintLeft_toLeftOf="parent" />
 
     <Button
-        android:id="@+id/authBtn_Signup1"
+        android:id="@+id/signupBtn_Signup2"
         android:layout_width="0dp"
         android:layout_height="52dp"
         android:layout_marginLeft="27dp"
+        android:layout_marginTop="332dp"
         android:layout_marginRight="27dp"
-        android:layout_marginBottom="7dp"
+        android:layout_marginBottom="116dp"
         android:background="@drawable/button_style"
         android:fontFamily="@font/bold"
-        android:text="@string/auth"
+        android:text="@string/signup"
         android:textColor="#ffffff"
         android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@id/text4_Signup1"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
-
-    <TextView
-        android:id="@+id/text4_Signup1"
-        style="@style/regularTextStyle"
-        android:layout_width="0dp"
-        android:layout_height="17dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginTop="313dp"
-        android:layout_marginRight="28dp"
-        android:layout_marginBottom="170dp"
-        android:gravity="center"
-        android:text="@string/text4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_Signup1" />
-
+        app:layout_constraintTop_toBottomOf="@+id/text_Signup2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

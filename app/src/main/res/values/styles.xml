@@ -17,7 +17,8 @@
     <style name="regularTextStyle" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="android:textSize">12sp</item>
         <item name="android:fontFamily">@font/regular</item>
-        <item name="android:textColor">#6d6d6d</item>
+        <item name="android:textColorHint">#6d6d6d</item>
+        <item name="android:textColor">#000000</item>
     </style>
 
     <style name="errorTextStyle" parent="Theme.AppCompat.Light.DarkActionBar">
