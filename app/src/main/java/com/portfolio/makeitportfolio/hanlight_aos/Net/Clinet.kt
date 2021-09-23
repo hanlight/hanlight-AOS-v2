@@ -7,7 +7,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object Client {
-    private const val BASE_URL: String = "https://api.hanlight.kr"
+    private const val BASE_URL: String = "https://api.hanlight.kr/"
     val getClient: API
         get() {
             val gson = GsonBuilder()
