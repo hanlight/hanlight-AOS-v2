@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignupActivity2">
+    tools:context=".ResetPasswrodActivity">
 
     <ImageView
-        android:id="@+id/hanlightLogo_Signup2"
+        android:id="@+id/hanlightLogo_ResetPassword"
         android:layout_width="0dp"
         android:layout_height="28dp"
         android:layout_marginLeft="156dp"
@@ -20,76 +20,75 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/text_Signup2"
+        android:id="@+id/text_ResetPassword"
         style="@style/boldTextStyle"
         android:layout_width="0dp"
         android:layout_height="31dp"
         android:layout_marginLeft="141dp"
         android:layout_marginTop="12dp"
         android:layout_marginRight="141dp"
-        android:text="@string/signup"
+        android:text="비밀번호 재설정"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/hanlightLogo_Signup2" />
+        app:layout_constraintTop_toBottomOf="@id/hanlightLogo_ResetPassword" />
 
     <TextView
-        android:id="@+id/text2_Signup2"
+        android:id="@+id/text2_ResetPassword"
         style="@style/regularTextStyle"
         android:layout_width="0dp"
         android:layout_height="18dp"
         android:layout_marginStart="30dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginBottom="8dp"
         android:gravity="center"
-        android:text="@string/id"
-        app:layout_constraintBottom_toTopOf="@id/idEdt_Signup2"
+        android:text="비밀번호"
+        app:layout_constraintBottom_toTopOf="@id/idEdt_ResetPassword"
         app:layout_constraintLeft_toLeftOf="parent" />
 
     <EditText
-        android:id="@+id/idEdt_Signup2"
+        android:id="@+id/idEdt_ResetPassword"
         style="@style/regularTextStyle"
         android:layout_width="0dp"
         android:layout_height="44dp"
         android:layout_marginLeft="26dp"
         android:layout_marginTop="56dp"
         android:layout_marginRight="26dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/edittext_style"
-        android:hint="@string/id_hint"
+        android:hint="8~16자의 영문 대소문자, 숫자나 특수문자(키보드1~0)"
         android:inputType="text"
         android:paddingStart="20dp"
-        app:layout_constraintBottom_toTopOf="@id/error_Signup2"
+        app:layout_constraintBottom_toTopOf="@id/error_ResetPassword"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         tools:ignore="RtlSymmetry" />
 
     <TextView
-        android:id="@+id/error_Signup2"
+        android:id="@+id/error_ResetPassword"
         style="@style/errorTextStyle"
         android:layout_width="0dp"
         android:layout_height="17dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginBottom="33dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="11dp"
         android:gravity="center"
-        android:text="@string/error3"
+        android:text="형식이 잘못되었거나 존재하지 않는 아이디 입니다."
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@id/pswEdt_Signup2"
+        app:layout_constraintBottom_toTopOf="@id/text3_ResetPassword"
         app:layout_constraintLeft_toLeftOf="parent" />
 
     <TextView
-        android:id="@+id/text3_Signup2"
+        android:id="@+id/text3_ResetPassword"
         style="@style/regularTextStyle"
         android:layout_width="0dp"
         android:layout_height="18dp"
         android:layout_marginStart="30dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginBottom="8dp"
         android:gravity="center"
-        android:text="@string/password"
-        android:textColor="#000000"
-        app:layout_constraintBottom_toTopOf="@id/pswEdt_Signup2"
+        android:text="비밀번호 확인"
+        app:layout_constraintBottom_toTopOf="@id/passwordEdt_ResetPassword"
         app:layout_constraintLeft_toLeftOf="parent" />
 
     <EditText
-        android:id="@+id/pswEdt_Signup2"
+        android:id="@+id/passwordEdt_ResetPassword"
         style="@style/regularTextStyle"
         android:layout_width="0dp"
         android:layout_height="44dp"
@@ -98,86 +97,43 @@
         android:layout_marginRight="26dp"
         android:layout_marginBottom="4dp"
         android:background="@drawable/edittext_style"
-        android:hint="@string/psw_hint"
-        android:inputType="textPassword"
+        android:hint="확인"
+        android:inputType="phone"
         android:paddingStart="20dp"
-        app:layout_constraintBottom_toTopOf="@id/error1_Signup2"
+        app:layout_constraintBottom_toTopOf="@id/error2_ResetPassword"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         tools:ignore="RtlSymmetry" />
 
     <TextView
-        android:id="@+id/error1_Signup2"
+        android:id="@+id/error2_ResetPassword"
         style="@style/errorTextStyle"
         android:layout_width="0dp"
         android:layout_height="17dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginBottom="33dp"
-        android:gravity="center"
-        android:text="@string/error4"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@id/rePswEdt_Signup2"
-        app:layout_constraintLeft_toLeftOf="parent" />
-
-    <TextView
-        android:id="@+id/text4_Signup2"
-        style="@style/regularTextStyle"
-        android:layout_width="0dp"
-        android:layout_height="18dp"
         android:layout_marginStart="30dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginBottom="25dp"
         android:gravity="center"
-        android:text="@string/check_psw"
-        android:textColor="#000000"
-        app:layout_constraintBottom_toTopOf="@id/rePswEdt_Signup2"
-        app:layout_constraintLeft_toLeftOf="parent" />
-
-    <EditText
-        android:id="@+id/rePswEdt_Signup2"
-        style="@style/regularTextStyle"
-        android:layout_width="0dp"
-        android:layout_height="44dp"
-        android:layout_marginLeft="26dp"
-        android:layout_marginTop="56dp"
-        android:layout_marginRight="26dp"
-        android:layout_marginBottom="4dp"
-        android:background="@drawable/edittext_style"
-        android:inputType="textPassword"
-        android:paddingStart="20dp"
-        app:layout_constraintBottom_toTopOf="@id/error2_Signup2"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:ignore="LabelFor,RtlSymmetry" />
-
-    <TextView
-        android:id="@+id/error2_Signup2"
-        style="@style/errorTextStyle"
-        android:layout_width="0dp"
-        android:layout_height="17dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginBottom="16dp"
-        android:gravity="center"
-        android:text="@string/error5"
+        android:text="전화번호가 올바른 형식이 아닙니다."
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@id/signupBtn_Signup2"
+        app:layout_constraintBottom_toTopOf="@id/authBtn_ResetPassword"
         app:layout_constraintLeft_toLeftOf="parent" />
 
     <Button
-        android:id="@+id/signupBtn_Signup2"
+        android:id="@+id/authBtn_ResetPassword"
         android:layout_width="0dp"
         android:layout_height="52dp"
         android:layout_marginLeft="27dp"
-        android:layout_marginTop="332dp"
         android:layout_marginRight="27dp"
-        android:layout_marginBottom="116dp"
+        android:layout_marginBottom="194dp"
         android:background="@drawable/button_style"
         android:fontFamily="@font/bold"
-        android:text="@string/signup"
+        android:text="설정"
         android:textColor="#ffffff"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_Signup2" />
+        android:layout_marginTop="254dp"
+        app:layout_constraintTop_toBottomOf="@+id/text_ResetPassword" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

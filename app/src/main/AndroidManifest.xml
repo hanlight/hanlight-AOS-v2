@@ -11,15 +11,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:ignore="AllowBackup">
+        <activity
+            android:name=".ResetPasswrodActivity"
+            android:exported="true" />
+        <activity
+            android:name=".SearchPasswordActivity"
+            android:exported="true" />
+        <activity
+            android:name=".SearchIdActivity"
+            android:exported="true" />
         <activity android:name=".SignupActivity2" />
-        <activity android:name=".SignupActivity">
+        <activity android:name=".SignupActivity" />
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity" />
         <activity android:name=".MainActivity" />
     </application>
 
