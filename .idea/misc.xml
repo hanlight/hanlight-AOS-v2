@@ -12,16 +12,16 @@
         <entry key="..\:/Users/sjcal/AndroidStudioProjects/hanlight-AOS-v2/app/src/main/res/layout-v26/activity_signup.xml" value="0.33796296296296297" />
         <entry key="..\:/Users/sjcal/AndroidStudioProjects/hanlight-AOS-v2/app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="..\:/Users/sjcal/AndroidStudioProjects/hanlight-AOS-v2/app/src/main/res/layout/activity_main.xml" value="0.3494791666666667" />
-        <entry key="..\:/Users/sjcal/AndroidStudioProjects/hanlight-AOS-v2/app/src/main/res/layout/activity_reset_passwrod.xml" value="0.3651041666666667" />
+        <entry key="..\:/Users/sjcal/AndroidStudioProjects/hanlight-AOS-v2/app/src/main/res/layout/activity_reset_passwrod.xml" value="0.5" />
         <entry key="..\:/Users/sjcal/AndroidStudioProjects/hanlight-AOS-v2/app/src/main/res/layout/activity_search_id.xml" value="0.3651041666666667" />
         <entry key="..\:/Users/sjcal/AndroidStudioProjects/hanlight-AOS-v2/app/src/main/res/layout/activity_search_password.xml" value="0.35" />
-        <entry key="..\:/Users/sjcal/AndroidStudioProjects/hanlight-AOS-v2/app/src/main/res/layout/activity_signup.xml" value="0.5812101910828026" />
+        <entry key="..\:/Users/sjcal/AndroidStudioProjects/hanlight-AOS-v2/app/src/main/res/layout/activity_signup.xml" value="0.33" />
         <entry key="..\:/Users/sjcal/AndroidStudioProjects/hanlight-AOS-v2/app/src/main/res/layout/activity_signup2.xml" value="0.3090601185436071" />
         <entry key="..\:/Users/sjcal/AndroidStudioProjects/hanlight-AOS-v2/app/src/main/res/xml/network_security_config.xml" value="0.3651041666666667" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

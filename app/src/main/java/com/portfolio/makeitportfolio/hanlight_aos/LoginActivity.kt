@@ -62,6 +62,8 @@ class LoginActivity : AppCompatActivity() {
                 }
                 if (id == 1 && psw == 1) {
                     loginBtn_Login.background = getDrawable(R.drawable.button_success)
+                } else{
+                    loginBtn_Login.background = getDrawable(R.drawable.button_style)
                 }
             }
 
@@ -82,6 +84,8 @@ class LoginActivity : AppCompatActivity() {
                 }
                 if (id == 1 && psw == 1) {
                     loginBtn_Login.background = getDrawable(R.drawable.button_success)
+                }else{
+                    loginBtn_Login.background = getDrawable(R.drawable.button_style)
                 }
             }
 

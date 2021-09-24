@@ -7,6 +7,18 @@
     tools:context=".ResetPasswrodActivity">
 
     <ImageView
+        android:id="@+id/backImg_ResetPassword"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="16dp"
+        android:src="@drawable/back_arrow"
+        app:layout_constraintBottom_toTopOf="@id/hanlightLogo_ResetPassword"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
         android:id="@+id/hanlightLogo_ResetPassword"
         android:layout_width="0dp"
         android:layout_height="28dp"
