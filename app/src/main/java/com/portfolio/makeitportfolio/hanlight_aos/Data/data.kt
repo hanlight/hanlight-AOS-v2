@@ -6,7 +6,7 @@ data class Login(
 )
 
 data class Data(
-    val accessToken : Boolean,
+    val accessToken : String,
     val user : User
 )
 

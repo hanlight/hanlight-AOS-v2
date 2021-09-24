@@ -10,7 +10,7 @@ interface API {
     @POST("/user/login")
     fun login(
         @Field("id") id: String,
-        @Field("password") pw: String
+        @Field("password") password: String
     ): retrofit2.Call<Login>
 
     @FormUrlEncoded
