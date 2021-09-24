@@ -33,7 +33,8 @@
         android:paddingStart="20dp"
         app:layout_constraintBottom_toTopOf="@id/passwordEdt_Login"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
+        app:layout_constraintRight_toRightOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/passwordEdt_Login"
@@ -41,30 +42,31 @@
         android:layout_width="0dp"
         android:layout_height="44dp"
         android:layout_marginLeft="17dp"
-        android:layout_marginTop="18dp"
         android:layout_marginRight="17dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/edittext_style"
         android:hint="비밀번호"
         android:inputType="textPassword"
         android:paddingStart="20dp"
-        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@id/passwordErrorTx_Login"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
-        android:visibility="invisible"
         android:id="@+id/passwordErrorTx_Login"
-        android:layout_marginLeft="17dp"
-        android:layout_marginBottom="45dp"
-        android:text="한빛에 등록되지 않은 아이디거나, \n아이디 또는 비밀번호를 잘못 입력하셨습니다."
         style="@style/errorTextStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/loginBtn_Login"/>
+        android:layout_marginLeft="17dp"
+        android:layout_marginBottom="45dp"
+        android:text="한빛에 등록되지 않은 아이디거나, \n아이디 또는 비밀번호를 잘못 입력하셨습니다."
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@id/loginBtn_Login"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <Button
+        android:clickable="false"
         android:id="@+id/loginBtn_Login"
         android:layout_width="0dp"
         android:layout_height="52dp"
@@ -92,74 +94,74 @@
         app:layout_constraintBottom_toTopOf="@id/searchPassword_Login" />
 
     <TextView
-        app:layout_constraintTop_toBottomOf="@id/hanlightLogo_Login"
-        android:layout_marginTop="298dp"
         android:id="@+id/searchID_Login"
         style="@style/bottomTextStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="85dp"
+        android:layout_marginTop="298dp"
         android:layout_marginRight="260dp"
         android:layout_marginBottom="230dp"
         android:text="ID찾기"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/hanlightLogo_Login" />
 
     <View
-        app:layout_constraintTop_toBottomOf="@id/hanlightLogo_Login"
-        android:layout_marginTop="298dp"
         android:id="@+id/line1"
         android:layout_width="1dp"
         android:layout_height="17dp"
+        android:layout_marginTop="298dp"
         android:layout_marginRight="1dp"
         android:layout_marginBottom="230dp"
         android:background="#d3d3d3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@id/searchID_Login"
-        app:layout_constraintRight_toLeftOf="@id/searchPassword_Login" />
+        app:layout_constraintRight_toLeftOf="@id/searchPassword_Login"
+        app:layout_constraintTop_toBottomOf="@id/hanlightLogo_Login" />
 
     <TextView
-        app:layout_constraintTop_toBottomOf="@id/hanlightLogo_Login"
-        android:layout_marginTop="298dp"
         android:id="@+id/searchPassword_Login"
         style="@style/bottomTextStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="38dp"
+        android:layout_marginTop="298dp"
         android:layout_marginRight="38dp"
         android:layout_marginBottom="230dp"
         android:text="비밀번호 찾기"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@id/searchID_Login"
-        app:layout_constraintRight_toLeftOf="@id/signup_Login" />
+        app:layout_constraintRight_toLeftOf="@id/signup_Login"
+        app:layout_constraintTop_toBottomOf="@id/hanlightLogo_Login" />
 
     <View
-        app:layout_constraintTop_toBottomOf="@id/hanlightLogo_Login"
-        android:layout_marginTop="298dp"
         android:id="@+id/line2"
         android:layout_width="1dp"
         android:layout_height="17dp"
         android:layout_marginLeft="1dp"
+        android:layout_marginTop="298dp"
         android:layout_marginBottom="230dp"
         android:background="#d3d3d3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@id/searchPassword_Login"
-        app:layout_constraintRight_toLeftOf="@id/signup_Login" />
+        app:layout_constraintRight_toLeftOf="@id/signup_Login"
+        app:layout_constraintTop_toBottomOf="@id/hanlightLogo_Login" />
 
     <TextView
-        app:layout_constraintTop_toBottomOf="@id/hanlightLogo_Login"
-        android:layout_marginTop="298dp"
         android:id="@+id/signup_Login"
         style="@style/bottomTextStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="260dp"
+        android:layout_marginTop="298dp"
         android:layout_marginRight="85dp"
         android:layout_marginBottom="230dp"
         android:text="회원가입"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/hanlightLogo_Login" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
