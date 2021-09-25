@@ -81,9 +81,7 @@ class SignupActivity : AppCompatActivity() {
                 val phone = phoneEdt_Signup1.text.toString() //사용자가 적은 Password를 받아옴
                 val intent = Intent(baseContext, SignupActivity2::class.java)
                 intent.putExtra("key", key)
-                intent.putExtra("phone", phone)
                 startActivity(intent)
-                finish()
 
             } else {
                 keyEdt_Signup1.background = getDrawable(R.drawable.edittext_error_style)

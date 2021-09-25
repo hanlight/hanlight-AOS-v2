@@ -81,7 +81,7 @@
         android:layout_height="17dp"
         android:layout_marginStart="28dp"
         android:layout_marginBottom="33dp"
-        android:gravity="center"
+        android:gravity="left"
         android:text="@string/error3"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@id/pswEdt_Signup2"
