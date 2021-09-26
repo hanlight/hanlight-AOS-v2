@@ -20,4 +20,16 @@ interface API {
         @Field("password") pw: String,
         @Field("signKey") key: String
     ): retrofit2.Call<Void>
+
+    @FormUrlEncoded
+    @POST("/user/sms")
+    fun sms(
+        @Field("phone") phone: String
+    ): retrofit2.Call<String>
+
+    @FormUrlEncoded
+    @POST("/user/recovery/id")
+    fun searchId(
+        @Field("code") code: String
+    ): retrofit2.Call<Void>
 }

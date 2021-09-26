@@ -78,7 +78,6 @@ class SignupActivity : AppCompatActivity() {
                     .isNullOrBlank()) || !(phoneEdt_Signup1.text.toString().isNullOrBlank())
             ) {
                 val key = keyEdt_Signup1.text.toString() //사용자가 적은 ID를 받아옴
-                val phone = phoneEdt_Signup1.text.toString() //사용자가 적은 Password를 받아옴
                 val intent = Intent(baseContext, SignupActivity2::class.java)
                 intent.putExtra("key", key)
                 startActivity(intent)

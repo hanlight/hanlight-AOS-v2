@@ -51,7 +51,7 @@
         android:layout_height="18dp"
         android:layout_marginStart="30dp"
         android:layout_marginBottom="4dp"
-        android:gravity="center"
+        android:gravity="left"
         android:text="전화번호"
         app:layout_constraintBottom_toTopOf="@id/phoneEdt_SearchId"
         app:layout_constraintLeft_toLeftOf="parent" />
@@ -81,8 +81,8 @@
         android:layout_height="17dp"
         android:layout_marginStart="30dp"
         android:layout_marginBottom="25dp"
-        android:gravity="center"
-        android:text="전화번호가 올바른 형식이 아닙니다."
+        android:gravity="left"
+        android:text="전화번호가 올바르지 않습니다."
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@id/authBtn_SearchId"
         app:layout_constraintLeft_toLeftOf="parent" />
