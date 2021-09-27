@@ -1,23 +1,154 @@
 package com.portfolio.makeitportfolio.hanlight_aos
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
+import android.util.Log
+import android.view.View
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.portfolio.makeitportfolio.hanlight_aos.Data.searchPassword
+import com.portfolio.makeitportfolio.hanlight_aos.Net.Client
+import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.activity_search_id.*
 import kotlinx.android.synthetic.main.activity_search_password.*
-import kotlinx.android.synthetic.main.activity_signup.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+
+private var id = 0
+private var phone = 0
+
 
 class SearchPasswordActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search_password)
 
+        changeBackground()
         backButtonClick()
+        authButtonClick()
     }
 
-    private fun backButtonClick(){
+    private fun changeBackground() {
+        idEdt_SearchPassword.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                idEdt_SearchPassword.background = getDrawable(R.drawable.edittext_success_style)
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                if (s.isNullOrBlank() || s.isNullOrEmpty()) {
+                    idEdt_SearchPassword.background = getDrawable(R.drawable.edittext_style)
+                    id = 0
+                } else {
+                    id = 1
+                }
+                if (id == 1 && phone == 1) {
+                    authBtn_SearchPassword.background = getDrawable(R.drawable.button_success)
+                } else {
+                    authBtn_SearchPassword.background = getDrawable(R.drawable.button_style)
+                }
+            }
+
+        })
+
+        phoneEdt_SearchPassword.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                phoneEdt_SearchPassword.background =
+                    getDrawable(R.drawable.edittext_success_style)
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                if (s.isNullOrBlank() || s.isNullOrEmpty()) {
+                    phoneEdt_SearchPassword.background = getDrawable(R.drawable.edittext_style)
+                    phone = 0
+                } else {
+                    phone = 1
+                }
+                if (id == 1 && phone == 1) {
+                    authBtn_SearchPassword.background = getDrawable(R.drawable.button_success)
+                } else {
+                    authBtn_SearchPassword.background = getDrawable(R.drawable.button_style)
+                }
+            }
+
+        })
+    }
+
+    private fun backButtonClick() {
         backImg_SearchPassword.setOnClickListener {
             val intent = Intent(baseContext, LoginActivity::class.java)
             startActivity(intent)
         }
     }
+
+    private fun authButtonClick() {
+        authBtn_SearchPassword.setOnClickListener {
+            if (!(idEdt_SearchPassword.text.toString()
+                    .isNullOrEmpty()) || !(idEdt_SearchPassword.text.toString()
+                    .isNullOrBlank())
+            ) {
+                val id = idEdt_SearchPassword.text.toString()
+                val phone = phoneEdt_SearchPassword.text.toString()
+                val call_R: Call<String> = Client.getClient.sms(phone)
+                call_R.enqueue(object : Callback<String> {
+                    override fun onFailure(call: Call<String>, t: Throwable) {
+                        Toast.makeText(
+                            applicationContext,
+                            "네트워크 혹은 서버에 문제가 있습니다.",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+
+                    override fun onResponse(
+                        call: Call<String>, response: Response<String>
+                    ) { //서버 정상 작동
+                        if (response.code() == 200) {
+                            val code = response.body()
+                            Log.i("Log", response.body().toString())
+                            val call_R: Call<searchPassword> =
+                                Client.getClient.searchPassword(id, phone)
+                            call_R.enqueue(object : Callback<searchPassword> {
+                                override fun onFailure(call: Call<searchPassword>, t: Throwable) {}
+                                override fun onResponse(
+                                    call: Call<searchPassword>,
+                                    response: Response<searchPassword>
+                                ) { //서버 정상 작동
+                                    if (response.code() == 200) {
+                                        Log.i("Log", response.body().toString())
+                                        val intent =
+                                            Intent(baseContext, ResetPasswrodActivity::class.java)
+                                        startActivity(intent)
+                                        finish()
+                                    }
+                                }
+                            })
+                        } else if (response.code() == 412) { //잘못 된 값이 왔을 때
+                            Log.i("Log", response.body().toString())
+                            error2_SearchPassword.visibility = View.VISIBLE
+                        }
+                    }
+                })
+            } else if (!(phoneEdt_SearchPassword.text.toString()
+                    .isNullOrBlank()) || !(phoneEdt_SearchPassword.text.toString()
+                    .isNullOrBlank())
+            ) {
+                error2_SearchPassword.visibility = View.VISIBLE
+                error2_SearchPassword.text = "비밀번호를 입력해주세요."
+                phoneEdt_SearchPassword.background = getDrawable(R.drawable.edittext_error_style)
+            } else {
+                error_SearchPassword.visibility = View.VISIBLE
+                error_SearchPassword.text = "아이디를 입력해주세요."
+                idEdt_SearchPassword.background = getDrawable(R.drawable.edittext_error_style)
+            }
+        }
+    }
+
 }

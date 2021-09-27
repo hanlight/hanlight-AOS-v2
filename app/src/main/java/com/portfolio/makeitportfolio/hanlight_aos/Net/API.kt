@@ -1,6 +1,7 @@
 package com.portfolio.makeitportfolio.hanlight_aos.Net
 
 import com.portfolio.makeitportfolio.hanlight_aos.Data.Login
+import com.portfolio.makeitportfolio.hanlight_aos.Data.searchPassword
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.POST
@@ -32,4 +33,11 @@ interface API {
     fun searchId(
         @Field("code") code: String
     ): retrofit2.Call<Void>
+
+    @FormUrlEncoded
+    @POST("/user/recovery/password")
+    fun searchPassword(
+        @Field("code") code: String,
+        @Field("id") id: String
+    ): retrofit2.Call<searchPassword>
 }

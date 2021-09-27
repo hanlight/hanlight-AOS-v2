@@ -20,3 +20,9 @@ data class User(
     val classNum : Int,
     val studentNum : Int
 )
+
+data class searchPassword(
+    val success:Boolean,
+    val accessToken: String,
+    val refreshToken : String
+)
