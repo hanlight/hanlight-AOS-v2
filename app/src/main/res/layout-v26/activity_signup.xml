@@ -12,11 +12,12 @@
         android:layout_height="24dp"
         android:layout_marginTop="40dp"
         android:layout_marginBottom="5dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
         android:src="@drawable/back_arrow"
         app:layout_constraintBottom_toTopOf="@id/hanlightLogo_Signup1"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
 
     <ImageView
         android:id="@+id/hanlightLogo_Signup1"
@@ -51,7 +52,7 @@
         android:layout_height="18dp"
         android:layout_marginStart="30dp"
         android:layout_marginBottom="8dp"
-        android:gravity="left"
+        android:gravity="start"
         android:text="@string/key"
         android:textColor="#000000"
         app:layout_constraintBottom_toTopOf="@id/keyEdt_Signup1"
@@ -66,13 +67,14 @@
         android:layout_marginRight="26dp"
         android:layout_marginBottom="4dp"
         android:background="@drawable/edittext_style"
-        android:hint="@string/keyEdt"
+        android:hint="@string/keyHint"
         android:inputType="text"
         android:paddingStart="20dp"
         app:layout_constraintBottom_toTopOf="@id/error2_Signup1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        tools:ignore="RtlSymmetry" />
+        tools:ignore="RtlSymmetry"
+        android:importantForAutofill="no" />
 
 
     <TextView
@@ -83,8 +85,8 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="313dp"
         android:layout_marginBottom="37dp"
-        android:gravity="left"
-        android:text="@string/error1"
+        android:gravity="start"
+        android:text="@string/signFormError"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@id/phoneEdt_Signup1"
         app:layout_constraintLeft_toLeftOf="parent" />
@@ -96,7 +98,7 @@
         android:layout_height="18dp"
         android:layout_marginStart="30dp"
         android:layout_marginBottom="8dp"
-        android:gravity="left"
+        android:gravity="start"
         android:text="@string/phone"
         android:textColor="#000000"
         app:layout_constraintBottom_toTopOf="@id/phoneEdt_Signup1"
@@ -112,13 +114,14 @@
         android:layout_marginRight="26dp"
         android:layout_marginBottom="4dp"
         android:background="@drawable/edittext_style"
-        android:hint="@string/hint2"
+        android:hint="@string/phoneRule"
         android:inputType="number"
         android:paddingStart="20dp"
         app:layout_constraintBottom_toTopOf="@id/error1_Signup1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        tools:ignore="RtlSymmetry,TextFields" />
+        tools:ignore="RtlSymmetry,TextFields"
+        android:importantForAutofill="no" />
 
     <TextView
         android:id="@+id/error1_Signup1"
@@ -128,8 +131,8 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="313dp"
         android:layout_marginBottom="25dp"
-        android:gravity="left"
-        android:text="@string/error2"
+        android:gravity="start"
+        android:text="@string/phoneFormError"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@id/authBtn_Signup1"
         app:layout_constraintLeft_toLeftOf="parent" />
@@ -159,8 +162,8 @@
         android:layout_marginTop="313dp"
         android:layout_marginRight="28dp"
         android:layout_marginBottom="170dp"
-        android:gravity="left"
-        android:text="@string/text4"
+        android:gravity="start"
+        android:text="@string/signupNotice"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

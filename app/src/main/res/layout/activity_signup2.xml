@@ -12,11 +12,12 @@
         android:layout_height="24dp"
         android:layout_marginTop="40dp"
         android:layout_marginBottom="5dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
         android:src="@drawable/back_arrow"
         app:layout_constraintBottom_toTopOf="@id/hanlightLogo_Signup2"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
 
     <ImageView
         android:id="@+id/hanlightLogo_Signup2"
@@ -51,7 +52,7 @@
         android:layout_height="18dp"
         android:layout_marginStart="30dp"
         android:layout_marginBottom="4dp"
-        android:gravity="left"
+        android:gravity="start"
         android:text="@string/id"
         app:layout_constraintBottom_toTopOf="@id/idEdt_Signup2"
         app:layout_constraintLeft_toLeftOf="parent" />
@@ -66,13 +67,14 @@
         android:layout_marginRight="26dp"
         android:layout_marginBottom="4dp"
         android:background="@drawable/edittext_style"
-        android:hint="@string/id_hint"
+        android:hint="@string/idRule"
         android:inputType="text"
         android:paddingStart="20dp"
         app:layout_constraintBottom_toTopOf="@id/error_Signup2"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        tools:ignore="RtlSymmetry" />
+        tools:ignore="RtlSymmetry"
+        android:importantForAutofill="no" />
 
     <TextView
         android:id="@+id/error_Signup2"
@@ -81,8 +83,8 @@
         android:layout_height="17dp"
         android:layout_marginStart="28dp"
         android:layout_marginBottom="33dp"
-        android:gravity="left"
-        android:text="@string/error3"
+        android:gravity="start"
+        android:text="@string/signupFormError"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@id/pswEdt_Signup2"
         app:layout_constraintLeft_toLeftOf="parent" />
@@ -94,7 +96,7 @@
         android:layout_height="18dp"
         android:layout_marginStart="30dp"
         android:layout_marginBottom="4dp"
-        android:gravity="left"
+        android:gravity="start"
         android:text="@string/password"
         android:textColor="#000000"
         app:layout_constraintBottom_toTopOf="@id/pswEdt_Signup2"
@@ -110,13 +112,14 @@
         android:layout_marginRight="26dp"
         android:layout_marginBottom="4dp"
         android:background="@drawable/edittext_style"
-        android:hint="@string/psw_hint"
+        android:hint="@string/passwordRule"
         android:inputType="textPassword"
         android:paddingStart="20dp"
         app:layout_constraintBottom_toTopOf="@id/error1_Signup2"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        tools:ignore="RtlSymmetry" />
+        tools:ignore="RtlSymmetry"
+        android:importantForAutofill="no" />
 
     <TextView
         android:id="@+id/error1_Signup2"
@@ -125,8 +128,8 @@
         android:layout_height="17dp"
         android:layout_marginStart="28dp"
         android:layout_marginBottom="33dp"
-        android:gravity="left"
-        android:text="@string/error4"
+        android:gravity="start"
+        android:text="@string/signupFormError"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@id/rePswEdt_Signup2"
         app:layout_constraintLeft_toLeftOf="parent" />
@@ -138,8 +141,8 @@
         android:layout_height="18dp"
         android:layout_marginStart="30dp"
         android:layout_marginBottom="4dp"
-        android:gravity="left"
-        android:text="@string/check_psw"
+        android:gravity="start"
+        android:text="@string/checkPassword"
         android:textColor="#000000"
         app:layout_constraintBottom_toTopOf="@id/rePswEdt_Signup2"
         app:layout_constraintLeft_toLeftOf="parent" />
@@ -159,7 +162,8 @@
         app:layout_constraintBottom_toTopOf="@id/error2_Signup2"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        tools:ignore="LabelFor,RtlSymmetry" />
+        tools:ignore="LabelFor,RtlSymmetry"
+        android:importantForAutofill="no" />
 
     <TextView
         android:id="@+id/error2_Signup2"
@@ -168,8 +172,8 @@
         android:layout_height="17dp"
         android:layout_marginStart="28dp"
         android:layout_marginBottom="16dp"
-        android:gravity="left"
-        android:text="@string/error5"
+        android:gravity="start"
+        android:text="@string/passwordMatchError"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@id/signupBtn_Signup2"
         app:layout_constraintLeft_toLeftOf="parent" />

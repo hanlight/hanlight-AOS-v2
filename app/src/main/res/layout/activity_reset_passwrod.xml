@@ -12,11 +12,12 @@
         android:layout_height="24dp"
         android:layout_marginTop="40dp"
         android:layout_marginBottom="5dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
         android:src="@drawable/back_arrow"
         app:layout_constraintBottom_toTopOf="@id/hanlightLogo_ResetPassword"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/backbutton" />
 
     <ImageView
         android:id="@+id/hanlightLogo_ResetPassword"
@@ -36,10 +37,8 @@
         style="@style/boldTextStyle"
         android:layout_width="0dp"
         android:layout_height="31dp"
-        android:layout_marginLeft="141dp"
         android:layout_marginTop="12dp"
-        android:layout_marginRight="141dp"
-        android:text="비밀번호 재설정"
+        android:text="@string/resetPassword"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/hanlightLogo_ResetPassword" />
@@ -51,8 +50,8 @@
         android:layout_height="18dp"
         android:layout_marginStart="30dp"
         android:layout_marginBottom="8dp"
-        android:gravity="left"
-        android:text="비밀번호"
+        android:gravity="start"
+        android:text="@string/password"
         app:layout_constraintBottom_toTopOf="@id/idEdt_ResetPassword"
         app:layout_constraintLeft_toLeftOf="parent" />
 
@@ -66,13 +65,14 @@
         android:layout_marginRight="26dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/edittext_style"
-        android:hint="8~16자의 영문 대소문자, 숫자나 특수문자(키보드1~0)"
+        android:hint="@string/passwordRule"
         android:inputType="text"
         android:paddingStart="20dp"
         app:layout_constraintBottom_toTopOf="@id/error_ResetPassword"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        tools:ignore="RtlSymmetry" />
+        tools:ignore="RtlSymmetry,TextFields"
+        android:importantForAutofill="no" />
 
     <TextView
         android:id="@+id/error_ResetPassword"
@@ -81,8 +81,8 @@
         android:layout_height="17dp"
         android:layout_marginStart="30dp"
         android:layout_marginBottom="11dp"
-        android:gravity="left"
-        android:text="형식이 잘못되었거나 존재하지 않는 아이디 입니다."
+        android:gravity="start"
+        android:text="@string/idFormError"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@id/text3_ResetPassword"
         app:layout_constraintLeft_toLeftOf="parent" />
@@ -94,8 +94,8 @@
         android:layout_height="18dp"
         android:layout_marginStart="30dp"
         android:layout_marginBottom="8dp"
-        android:gravity="left"
-        android:text="비밀번호 확인"
+        android:gravity="start"
+        android:text="@string/checkPassword"
         app:layout_constraintBottom_toTopOf="@id/passwordEdt_ResetPassword"
         app:layout_constraintLeft_toLeftOf="parent" />
 
@@ -109,13 +109,14 @@
         android:layout_marginRight="26dp"
         android:layout_marginBottom="4dp"
         android:background="@drawable/edittext_style"
-        android:hint="확인"
+        android:hint="@string/cheack"
         android:inputType="phone"
         android:paddingStart="20dp"
         app:layout_constraintBottom_toTopOf="@id/error2_ResetPassword"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        tools:ignore="RtlSymmetry" />
+        tools:ignore="RtlSymmetry,TextFields"
+        android:importantForAutofill="no" />
 
     <TextView
         android:id="@+id/error2_ResetPassword"
@@ -124,8 +125,8 @@
         android:layout_height="17dp"
         android:layout_marginStart="30dp"
         android:layout_marginBottom="25dp"
-        android:gravity="left"
-        android:text="전화번호가 올바른 형식이 아닙니다."
+        android:gravity="start"
+        android:text="@string/phoneFormError"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@id/authBtn_ResetPassword"
         app:layout_constraintLeft_toLeftOf="parent" />
@@ -139,7 +140,7 @@
         android:layout_marginBottom="194dp"
         android:background="@drawable/button_style"
         android:fontFamily="@font/bold"
-        android:text="설정"
+        android:text="@string/setting"
         android:textColor="#ffffff"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
