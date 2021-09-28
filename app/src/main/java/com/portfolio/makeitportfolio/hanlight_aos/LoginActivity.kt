@@ -2,12 +2,11 @@ package com.portfolio.makeitportfolio.hanlight_aos
 
 import android.content.Intent
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.content.res.AppCompatResources
 import com.portfolio.makeitportfolio.hanlight_aos.Data.Login
 import com.portfolio.makeitportfolio.hanlight_aos.Net.Client
 import kotlinx.android.synthetic.main.activity_login.*
@@ -16,8 +15,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 private var mBackWait: Long = 0
-private var id = 0
-private var psw = 0
+private val collection : Collection = Collection()
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,61 +38,14 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-        changeBackground()
 
-    }
+        collection.changeBackground(baseContext, idEdt_Login, passwordEdt_Login, loginBtn_Login)
 
-    private fun changeBackground(){
-        idEdt_Login.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-            }
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                idEdt_Login.background = getDrawable(R.drawable.edittext_success_style)
-            }
-
-            override fun afterTextChanged(s: Editable?) {
-                if (s.isNullOrBlank() || s.isNullOrEmpty()) {
-                    idEdt_Login.background = getDrawable(R.drawable.edittext_style)
-                    id = 0
-                } else {
-                    id = 1
-                }
-                if (id == 1 && psw == 1) {
-                    loginBtn_Login.background = getDrawable(R.drawable.button_success)
-                } else{
-                    loginBtn_Login.background = getDrawable(R.drawable.button_style)
-                }
-            }
-
-        })
-
-        passwordEdt_Login.addTextChangedListener (object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-            }
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                passwordEdt_Login.background = getDrawable(R.drawable.edittext_success_style)
-            }
-            override fun afterTextChanged(s: Editable?) {
-                if (s.isNullOrBlank() || s.isNullOrEmpty()) {
-                    passwordEdt_Login.background = getDrawable(R.drawable.edittext_style)
-                    psw = 0
-                } else {
-                    psw = 1
-                }
-                if (id == 1 && psw == 1) {
-                    loginBtn_Login.background = getDrawable(R.drawable.button_success)
-                }else{
-                    loginBtn_Login.background = getDrawable(R.drawable.button_style)
-                }
-            }
-
-        })
     }
 
     private fun loginButtonClick() {
         loginBtn_Login.setOnClickListener { //로그인 버튼을 눌렀을 때 이벤트 발생
-            if (!(passwordEdt_Login.text.toString().isNullOrEmpty()) || !(passwordEdt_Login.text.toString().isNullOrBlank())) {
+            if (passwordEdt_Login.text.toString().isNotEmpty() || passwordEdt_Login.text.toString().isNotBlank()) {
                 val id = idEdt_Login.text.toString() //사용자가 적은 ID를 받아옴
                 val password = passwordEdt_Login.text.toString() //사용자가 적은 Password를 받아옴
                 val call_R: Call<Login> = Client.getClient.login(id, password) //서버로 이 전에 받아온 id와 password를 전송함
@@ -113,16 +64,16 @@ class LoginActivity : AppCompatActivity() {
                         } else if (response.code() == 412) { //잘못 된 값이 왔을 때
                             Log.i("Log", response.body().toString())
                             passwordErrorTx_Login.visibility = View.VISIBLE
-                            passwordErrorTx_Login.text = "한빛에 등록되지 않은 아이디거나, \n아이디 또는 비밀번호를 잘못 입력하셨습니다."
-                            idEdt_Login.background = getDrawable(R.drawable.edittext_error_style)
-                            passwordEdt_Login.background = getDrawable(R.drawable.edittext_error_style)
+                            passwordErrorTx_Login.text = R.string.loginError.toString()
+                            idEdt_Login.background = AppCompatResources.getDrawable(baseContext, R.drawable.edittext_error_style)
+                            passwordEdt_Login.background = AppCompatResources.getDrawable(baseContext, R.drawable.edittext_error_style)
                         }
                     }
                 })
             }else{
                 passwordErrorTx_Login.visibility = View.VISIBLE
                 passwordErrorTx_Login.text = "비밀번호를 입력해주세요."
-                passwordEdt_Login.background = getDrawable(R.drawable.edittext_error_style)
+                passwordEdt_Login.background = AppCompatResources.getDrawable(baseContext, R.drawable.edittext_error_style)
             }
         }
     }

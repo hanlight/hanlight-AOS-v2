@@ -2,118 +2,39 @@ package com.portfolio.makeitportfolio.hanlight_aos
 
 import android.content.Intent
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.portfolio.makeitportfolio.hanlight_aos.Net.Client
-import kotlinx.android.synthetic.main.activity_signup.*
 import kotlinx.android.synthetic.main.activity_signup2.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-private var id = 0
-private var psw = 0
-private var repsw = 0
+private val collection : Collection = Collection()
 
 class SignupActivity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup2)
 
-        changeBackground()
+        collection.changeBackground(baseContext, idEdt_Signup2, passwordEdt_Signup2, rePasswordEdt_Signup2, signupBtn_Signup2)
 
         authButtonClick()
 
         backButtonClick()
     }
 
-    private fun changeBackground() {
-        idEdt_Signup2.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-            }
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                idEdt_Signup2.background = getDrawable(R.drawable.edittext_success_style)
-            }
-
-            override fun afterTextChanged(s: Editable?) {
-                if (s.isNullOrBlank() || s.isNullOrEmpty()) {
-                    idEdt_Signup2.background = getDrawable(R.drawable.edittext_style)
-                    id = 0
-                } else {
-                    id = 1
-                }
-                if (id == 1 && psw == 1 && repsw == 1) {
-                    signupBtn_Signup2.background = getDrawable(R.drawable.button_success)
-                } else {
-                    signupBtn_Signup2.background = getDrawable(R.drawable.button_style)
-                }
-            }
-
-        })
-
-        pswEdt_Signup2.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-            }
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                pswEdt_Signup2.background = getDrawable(R.drawable.edittext_success_style)
-            }
-
-            override fun afterTextChanged(s: Editable?) {
-                if (s.isNullOrBlank() || s.isNullOrEmpty()) {
-                    pswEdt_Signup2.background = getDrawable(R.drawable.edittext_style)
-                    psw = 0
-                } else {
-                    psw = 1
-                }
-                if (id == 1 && psw == 1 && repsw == 1) {
-                    signupBtn_Signup2.background = getDrawable(R.drawable.button_success)
-                } else {
-                    signupBtn_Signup2.background = getDrawable(R.drawable.button_style)
-                }
-            }
-
-        })
-
-        rePswEdt_Signup2.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-            }
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                rePswEdt_Signup2.background = getDrawable(R.drawable.edittext_success_style)
-            }
-
-            override fun afterTextChanged(s: Editable?) {
-                if (s.isNullOrBlank() || s.isNullOrEmpty()) {
-                    rePswEdt_Signup2.background = getDrawable(R.drawable.edittext_style)
-                    psw = 0
-                } else {
-                    psw = 1
-                }
-                if (id == 1 && psw == 1 && repsw == 1) {
-                    signupBtn_Signup2.background = getDrawable(R.drawable.button_success)
-                } else {
-                    signupBtn_Signup2.background = getDrawable(R.drawable.button_style)
-                }
-            }
-
-        })
-    }
-
     private fun authButtonClick() {
         signupBtn_Signup2.setOnClickListener {
             val id = idEdt_Signup2.text.toString() //사용자가 적은 ID를 받아옴
-            val password = pswEdt_Signup2.text.toString() //사용자가 적은 Password를 받아옴
-            val repassword = rePswEdt_Signup2.text.toString()
+            val password = passwordEdt_Signup2.text.toString() //사용자가 적은 Password를 받아옴
+            val repassword = rePasswordEdt_Signup2.text.toString()
             val intent = getIntent()
             val key = intent.getStringExtra("key")
             Log.i("asdfasdf", key.toString())
-            if (password.equals(repassword)) {
+            if (password == repassword) {
                 val call_R: Call<Void> =
                     Client.getClient.register(id, password, key!!) //서버로 이 전에 받아온 id와 password를 전송함
                 call_R.enqueue(object : Callback<Void> {

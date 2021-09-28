@@ -86,7 +86,7 @@
         android:gravity="start"
         android:text="@string/signupFormError"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@id/pswEdt_Signup2"
+        app:layout_constraintBottom_toTopOf="@id/passwordEdt_Signup2"
         app:layout_constraintLeft_toLeftOf="parent" />
 
     <TextView
@@ -99,11 +99,11 @@
         android:gravity="start"
         android:text="@string/password"
         android:textColor="#000000"
-        app:layout_constraintBottom_toTopOf="@id/pswEdt_Signup2"
+        app:layout_constraintBottom_toTopOf="@id/passwordEdt_Signup2"
         app:layout_constraintLeft_toLeftOf="parent" />
 
     <EditText
-        android:id="@+id/pswEdt_Signup2"
+        android:id="@+id/passwordEdt_Signup2"
         style="@style/regularTextStyle"
         android:layout_width="0dp"
         android:layout_height="44dp"
@@ -131,7 +131,7 @@
         android:gravity="start"
         android:text="@string/signupFormError"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@id/rePswEdt_Signup2"
+        app:layout_constraintBottom_toTopOf="@id/rePasswordEdt_Signup2"
         app:layout_constraintLeft_toLeftOf="parent" />
 
     <TextView
@@ -144,11 +144,11 @@
         android:gravity="start"
         android:text="@string/checkPassword"
         android:textColor="#000000"
-        app:layout_constraintBottom_toTopOf="@id/rePswEdt_Signup2"
+        app:layout_constraintBottom_toTopOf="@id/rePasswordEdt_Signup2"
         app:layout_constraintLeft_toLeftOf="parent" />
 
     <EditText
-        android:id="@+id/rePswEdt_Signup2"
+        android:id="@+id/rePasswordEdt_Signup2"
         style="@style/regularTextStyle"
         android:layout_width="0dp"
         android:layout_height="44dp"
