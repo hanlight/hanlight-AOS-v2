@@ -29,13 +29,13 @@
         android:layout_marginBottom="18dp"
         android:background="@drawable/edittext_style"
         android:hint="@string/id"
-        android:importantForAutofill="no"
         android:inputType="text"
         android:paddingStart="20dp"
         app:layout_constraintBottom_toTopOf="@id/passwordEdt_Login"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        tools:ignore="RtlSymmetry,TouchTargetSizeCheck" />
+        tools:ignore="RtlSymmetry,TouchTargetSizeCheck"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/passwordEdt_Login"
@@ -47,13 +47,13 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/edittext_style"
         android:hint="@string/password"
-        android:importantForAutofill="no"
         android:inputType="textPassword"
         android:paddingStart="20dp"
         app:layout_constraintBottom_toTopOf="@id/passwordErrorTx_Login"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        tools:ignore="RtlSymmetry,TouchTargetSizeCheck" />
+        tools:ignore="RtlSymmetry,TouchTargetSizeCheck"
+        android:importantForAutofill="no" />
 
     <TextView
         android:id="@+id/passwordErrorTx_Login"
@@ -68,6 +68,7 @@
         app:layout_constraintLeft_toLeftOf="parent" />
 
     <Button
+        android:clickable="false"
         android:id="@+id/loginBtn_Login"
         android:layout_width="0dp"
         android:layout_height="52dp"
@@ -76,7 +77,6 @@
         android:layout_marginRight="18dp"
         android:layout_marginBottom="20.5dp"
         android:background="@drawable/button_style"
-        android:clickable="false"
         android:fontFamily="@font/bold"
         android:text="@string/login"
         android:textColor="#ffffff"

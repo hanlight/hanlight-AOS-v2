@@ -15,7 +15,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 private var mBackWait: Long = 0
-private val collection: Collection = Collection()
+private val collection : Collection = Collection()
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,20 +45,13 @@ class LoginActivity : AppCompatActivity() {
 
     private fun loginButtonClick() {
         loginBtn_Login.setOnClickListener { //로그인 버튼을 눌렀을 때 이벤트 발생
-            if (passwordEdt_Login.text.toString().isNotEmpty() || passwordEdt_Login.text.toString()
-                    .isNotBlank()
-            ) {
+            if (passwordEdt_Login.text.toString().isNotEmpty() || passwordEdt_Login.text.toString().isNotBlank()) {
                 val id = idEdt_Login.text.toString() //사용자가 적은 ID를 받아옴
                 val password = passwordEdt_Login.text.toString() //사용자가 적은 Password를 받아옴
-                val call_R: Call<Login> =
-                    Client.getClient.login(id, password) //서버로 이 전에 받아온 id와 password를 전송함
+                val call_R: Call<Login> = Client.getClient.login(id, password) //서버로 이 전에 받아온 id와 password를 전송함
                 call_R.enqueue(object : Callback<Login> { //userData 형태로 json 수신
                     override fun onFailure(call: Call<Login>, t: Throwable) { //서버가 닫혔을 때
-                        Toast.makeText(
-                            applicationContext,
-                            "네트워크 혹은 서버에 문제가 있습니다.",
-                            Toast.LENGTH_SHORT
-                        ).show()
+                        Toast.makeText(applicationContext, "네트워크 혹은 서버에 문제가 있습니다.", Toast.LENGTH_SHORT).show()
                     }
 
                     override fun onResponse(
@@ -72,22 +65,15 @@ class LoginActivity : AppCompatActivity() {
                             Log.i("Log", response.body().toString())
                             passwordErrorTx_Login.visibility = View.VISIBLE
                             passwordErrorTx_Login.text = R.string.loginError.toString()
-                            idEdt_Login.background = AppCompatResources.getDrawable(
-                                baseContext,
-                                R.drawable.edittext_error_style
-                            )
-                            passwordEdt_Login.background = AppCompatResources.getDrawable(
-                                baseContext,
-                                R.drawable.edittext_error_style
-                            )
+                            idEdt_Login.background = AppCompatResources.getDrawable(baseContext, R.drawable.edittext_error_style)
+                            passwordEdt_Login.background = AppCompatResources.getDrawable(baseContext, R.drawable.edittext_error_style)
                         }
                     }
                 })
-            } else {
+            }else{
                 passwordErrorTx_Login.visibility = View.VISIBLE
                 passwordErrorTx_Login.text = "비밀번호를 입력해주세요."
-                passwordEdt_Login.background =
-                    AppCompatResources.getDrawable(baseContext, R.drawable.edittext_error_style)
+                passwordEdt_Login.background = AppCompatResources.getDrawable(baseContext, R.drawable.edittext_error_style)
             }
         }
     }

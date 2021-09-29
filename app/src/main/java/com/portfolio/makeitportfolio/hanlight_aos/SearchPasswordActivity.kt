@@ -2,18 +2,23 @@ package com.portfolio.makeitportfolio.hanlight_aos
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.portfolio.makeitportfolio.hanlight_aos.Data.searchPassword
 import com.portfolio.makeitportfolio.hanlight_aos.Net.Client
+import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.activity_search_id.*
 import kotlinx.android.synthetic.main.activity_search_password.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-private val collection = Collection()
+private var id = 0
+private var phone = 0
 
 
 class SearchPasswordActivity : AppCompatActivity() {
@@ -21,16 +26,61 @@ class SearchPasswordActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search_password)
 
-        collection.changeBackground(
-            baseContext,
-            idEdt_SearchPassword,
-            phoneEdt_SearchPassword,
-            authBtn_SearchPassword
-        )
+        changeBackground()
         backButtonClick()
         authButtonClick()
     }
 
+    private fun changeBackground() {
+        idEdt_SearchPassword.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                idEdt_SearchPassword.background = getDrawable(R.drawable.edittext_success_style)
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                if (s.isNullOrBlank() || s.isNullOrEmpty()) {
+                    idEdt_SearchPassword.background = getDrawable(R.drawable.edittext_style)
+                    id = 0
+                } else {
+                    id = 1
+                }
+                if (id == 1 && phone == 1) {
+                    authBtn_SearchPassword.background = getDrawable(R.drawable.button_success)
+                } else {
+                    authBtn_SearchPassword.background = getDrawable(R.drawable.button_style)
+                }
+            }
+
+        })
+
+        phoneEdt_SearchPassword.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                phoneEdt_SearchPassword.background =
+                    getDrawable(R.drawable.edittext_success_style)
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                if (s.isNullOrBlank() || s.isNullOrEmpty()) {
+                    phoneEdt_SearchPassword.background = getDrawable(R.drawable.edittext_style)
+                    phone = 0
+                } else {
+                    phone = 1
+                }
+                if (id == 1 && phone == 1) {
+                    authBtn_SearchPassword.background = getDrawable(R.drawable.button_success)
+                } else {
+                    authBtn_SearchPassword.background = getDrawable(R.drawable.button_style)
+                }
+            }
+
+        })
+    }
 
     private fun backButtonClick() {
         backImg_SearchPassword.setOnClickListener {
