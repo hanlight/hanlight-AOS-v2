@@ -14,7 +14,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-private val collection : Collection = Collection()
+private val collection: Collection = Collection()
 
 class SearchIdActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,7 +35,8 @@ class SearchIdActivity : AppCompatActivity() {
 
     private fun authButtonClick() {
         authBtn_SearchId.setOnClickListener {
-            if (phoneEdt_SearchId.text.toString().isNotEmpty() || phoneEdt_SearchId.text.toString().isNotBlank()
+            if (phoneEdt_SearchId.text.toString().isNotEmpty() || phoneEdt_SearchId.text.toString()
+                    .isNotBlank()
             ) {
                 val phone = phoneEdt_SearchId.text.toString()
                 val call_R: Call<String> = Client.getClient.sms(phone)
@@ -74,19 +75,26 @@ class SearchIdActivity : AppCompatActivity() {
                             error_SearchId.visibility = View.VISIBLE
                             error_SearchId.text = "전화번호가 올바르지 않습니다."
                             phoneEdt_SearchId.background =
-                                AppCompatResources.getDrawable(baseContext, R.drawable.edittext_error_style)
+                                AppCompatResources.getDrawable(
+                                    baseContext,
+                                    R.drawable.edittext_error_style
+                                )
                         } else {
                             passwordErrorTx_Login.visibility = View.VISIBLE
                             passwordErrorTx_Login.text = "비밀번호를 입력해주세요."
                             passwordEdt_Login.background =
-                                AppCompatResources.getDrawable(baseContext, R.drawable.edittext_error_style)
+                                AppCompatResources.getDrawable(
+                                    baseContext,
+                                    R.drawable.edittext_error_style
+                                )
                         }
                     }
                 })
             } else {
                 error_SearchId.visibility = View.VISIBLE
                 error_SearchId.text = "비밀번호를 입력해주세요."
-                phoneEdt_SearchId.background = AppCompatResources.getDrawable(baseContext, R.drawable.edittext_error_style)
+                phoneEdt_SearchId.background =
+                    AppCompatResources.getDrawable(baseContext, R.drawable.edittext_error_style)
             }
         }
     }

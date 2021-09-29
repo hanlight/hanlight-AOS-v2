@@ -12,14 +12,20 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-private val collection : Collection = Collection()
+private val collection: Collection = Collection()
 
 class SignupActivity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup2)
 
-        collection.changeBackground(baseContext, idEdt_Signup2, passwordEdt_Signup2, rePasswordEdt_Signup2, signupBtn_Signup2)
+        collection.changeBackground(
+            baseContext,
+            idEdt_Signup2,
+            passwordEdt_Signup2,
+            rePasswordEdt_Signup2,
+            signupBtn_Signup2
+        )
 
         authButtonClick()
 
@@ -31,7 +37,7 @@ class SignupActivity2 : AppCompatActivity() {
             val id = idEdt_Signup2.text.toString() //사용자가 적은 ID를 받아옴
             val password = passwordEdt_Signup2.text.toString() //사용자가 적은 Password를 받아옴
             val repassword = rePasswordEdt_Signup2.text.toString()
-            val intent = getIntent()
+            val intent = intent
             val key = intent.getStringExtra("key")
             Log.i("asdfasdf", key.toString())
             if (password == repassword) {
@@ -45,6 +51,7 @@ class SignupActivity2 : AppCompatActivity() {
                             Toast.LENGTH_SHORT
                         ).show()
                     }
+
                     override fun onResponse(call: Call<Void>, response: Response<Void>) { //서버 정상 작동
                         if (response.code() == 200) {
                             val intent = Intent(baseContext, MainActivity::class.java)
