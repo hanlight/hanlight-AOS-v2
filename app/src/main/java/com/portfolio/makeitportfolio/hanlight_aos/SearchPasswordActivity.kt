@@ -10,8 +10,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.portfolio.makeitportfolio.hanlight_aos.Data.searchPassword
 import com.portfolio.makeitportfolio.hanlight_aos.Net.Client
-import kotlinx.android.synthetic.main.activity_login.*
-import kotlinx.android.synthetic.main.activity_search_id.*
 import kotlinx.android.synthetic.main.activity_search_password.*
 import retrofit2.Call
 import retrofit2.Callback
