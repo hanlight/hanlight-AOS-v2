@@ -7,7 +7,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
-import com.portfolio.makeitportfolio.hanlight_aos.Data.searchPassword
+import com.portfolio.makeitportfolio.hanlight_aos.Data.SearchPassword
 import com.portfolio.makeitportfolio.hanlight_aos.Net.Client
 import kotlinx.android.synthetic.main.activity_search_password.*
 import retrofit2.Call
@@ -62,13 +62,13 @@ class SearchPasswordActivity : AppCompatActivity() {
                     ) { //서버 정상 작동
                         if (response.code() == 200) {
                             Log.i("Log", response.body().toString())
-                            val call_R: Call<searchPassword> =
+                            val call_R: Call<SearchPassword> =
                                 Client.getClient.searchPassword(id, phone)
-                            call_R.enqueue(object : Callback<searchPassword> {
-                                override fun onFailure(call: Call<searchPassword>, t: Throwable) {}
+                            call_R.enqueue(object : Callback<SearchPassword> {
+                                override fun onFailure(call: Call<SearchPassword>, t: Throwable) {}
                                 override fun onResponse(
-                                    call: Call<searchPassword>,
-                                    response: Response<searchPassword>
+                                    call: Call<SearchPassword>,
+                                    response: Response<SearchPassword>
                                 ) { //서버 정상 작동
                                     if (response.code() == 200) {
                                         Log.i("Log", response.body().toString())
