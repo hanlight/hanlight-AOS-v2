@@ -2,12 +2,11 @@ package com.portfolio.makeitportfolio.hanlight_aos
 
 import android.content.Intent
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.content.res.AppCompatResources
 import com.portfolio.makeitportfolio.hanlight_aos.Data.searchPassword
 import com.portfolio.makeitportfolio.hanlight_aos.Net.Client
 import kotlinx.android.synthetic.main.activity_search_password.*
@@ -23,7 +22,12 @@ class SearchPasswordActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search_password)
 
-        collection.changeBackground(baseContext, idEdt_SearchPassword, phoneEdt_SearchPassword, authBtn_SearchPassword)
+        collection.changeBackground(
+            baseContext,
+            idEdt_SearchPassword,
+            phoneEdt_SearchPassword,
+            authBtn_SearchPassword
+        )
         backButtonClick()
         authButtonClick()
     }
@@ -37,9 +41,9 @@ class SearchPasswordActivity : AppCompatActivity() {
 
     private fun authButtonClick() {
         authBtn_SearchPassword.setOnClickListener {
-            if (!(idEdt_SearchPassword.text.toString()
-                    .isNullOrEmpty()) || !(idEdt_SearchPassword.text.toString()
-                    .isNullOrBlank())
+            if (idEdt_SearchPassword.text.toString()
+                    .isNotEmpty() || idEdt_SearchPassword.text.toString()
+                    .isNotBlank()
             ) {
                 val id = idEdt_SearchPassword.text.toString()
                 val phone = phoneEdt_SearchPassword.text.toString()
@@ -57,7 +61,6 @@ class SearchPasswordActivity : AppCompatActivity() {
                         call: Call<String>, response: Response<String>
                     ) { //서버 정상 작동
                         if (response.code() == 200) {
-                            val code = response.body()
                             Log.i("Log", response.body().toString())
                             val call_R: Call<searchPassword> =
                                 Client.getClient.searchPassword(id, phone)
@@ -82,17 +85,19 @@ class SearchPasswordActivity : AppCompatActivity() {
                         }
                     }
                 })
-            } else if (!(phoneEdt_SearchPassword.text.toString()
-                    .isNullOrBlank()) || !(phoneEdt_SearchPassword.text.toString()
-                    .isNullOrBlank())
+            } else if (phoneEdt_SearchPassword.text.toString()
+                    .isNotBlank() || phoneEdt_SearchPassword.text.toString()
+                    .isNotBlank()
             ) {
                 error2_SearchPassword.visibility = View.VISIBLE
                 error2_SearchPassword.text = "비밀번호를 입력해주세요."
-                phoneEdt_SearchPassword.background = getDrawable(R.drawable.edittext_error_style)
+                phoneEdt_SearchPassword.background =
+                    AppCompatResources.getDrawable(baseContext, R.drawable.edittext_error_style)
             } else {
                 error_SearchPassword.visibility = View.VISIBLE
                 error_SearchPassword.text = "아이디를 입력해주세요."
-                idEdt_SearchPassword.background = getDrawable(R.drawable.edittext_error_style)
+                idEdt_SearchPassword.background =
+                    AppCompatResources.getDrawable(baseContext, R.drawable.edittext_error_style)
             }
         }
     }
