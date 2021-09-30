@@ -29,6 +29,7 @@ class SearchIdActivity : AppCompatActivity() {
         backImg_SearchId.setOnClickListener {
             val intent = Intent(baseContext, LoginActivity::class.java)
             startActivity(intent)
+            finish()
         }
     }
 
