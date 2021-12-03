@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fbfbfb"
+    android:background="#f9f9f9"
     tools:context=".MainActivity">
 
     <ImageView
@@ -21,56 +21,295 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
+        android:scrollbars="none"
+        android:fadeScrollbars="false"
         android:id="@+id/scrollView_Main"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="12dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="13dp"
         android:layout_marginTop="10dp"
-        android:layout_marginRight="12dp"
+        android:layout_marginRight="13dp"
+        app:layout_constraintBottom_toTopOf="@id/bottomNav_Main"
         app:layout_constraintTop_toBottomOf="@id/hanlightLogo_Main">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/main_item_style"
-            android:orientation="vertical">
+            android:layout_height="match_parent">
 
             <LinearLayout
+                android:id="@+id/noticeLinear_Main"
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_marginRight="16dp"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:background="@drawable/main_item_style"
+                android:orientation="vertical"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginRight="16dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/boldTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="15dp"
+                        android:layout_weight="1"
+                        android:gravity="left|bottom"
+                        android:paddingBottom="5dp"
+                        android:text="공지사항"
+                        android:textSize="18sp" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="15"
+                        android:rotationY="180"
+                        android:src="@drawable/back_arrow" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/noticeRecycle_Main"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="16dp"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/notice_item" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/mealLinear_Main"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/main_item_style"
+                android:orientation="vertical"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/scheduleLinear_Main"
+                app:layout_constraintTop_toBottomOf="@id/noticeLinear_Main">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginRight="16dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/boldTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="15dp"
+                        android:layout_weight="1"
+                        android:gravity="left|bottom"
+                        android:paddingBottom="5dp"
+                        android:text="이번 주 급식"
+                        android:textSize="18sp" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="8"
+                        android:rotationY="180"
+                        android:src="@drawable/back_arrow" />
+                </LinearLayout>
 
                 <TextView
-                    style="@style/boldTextStyle"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="15dp"
-                    android:layout_weight="1"
-                    android:gravity="left|bottom"
-                    android:paddingBottom="5dp"
-                    android:text="공지사항" />
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|top"
+                    android:layout_marginLeft="16dp"
+                    android:fontFamily="@font/regular"
+                    android:text="오늘의 급식은 뭘까요?"
+                    android:textColor="#9f9f9f"
+                    android:textSize="13sp" />
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="15"
-                    android:rotationY="180"
-                    android:src="@drawable/back_arrow" />
+                    android:layout_marginLeft="64dp"
+                    android:layout_marginTop="17dp"
+                    android:layout_marginBottom="8dp"
+                    android:src="@drawable/_66" />
+
             </LinearLayout>
 
-            <androidx.recyclerview.widget.RecyclerView
+            <LinearLayout
+                android:id="@+id/scheduleLinear_Main"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/main_item_style"
+                android:orientation="vertical"
+                app:layout_constraintLeft_toRightOf="@id/mealLinear_Main"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/noticeLinear_Main">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginRight="16dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/boldTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="15dp"
+                        android:layout_weight="1"
+                        android:gravity="left|bottom"
+                        android:paddingBottom="5dp"
+                        android:text="학사일정"
+                        android:textSize="18sp" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="8"
+                        android:rotationY="180"
+                        android:src="@drawable/back_arrow" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|top"
+                    android:layout_marginLeft="16dp"
+                    android:fontFamily="@font/regular"
+                    android:text="내일은 어떤 일을 할까요?"
+                    android:textColor="#9f9f9f"
+                    android:textSize="13sp" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="79dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="11dp"
+                    android:src="@drawable/_483" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/timeTableLinear_Main"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginRight="16dp" />
-        </LinearLayout>
+                android:layout_marginTop="16dp"
+                android:background="@drawable/main_item_style"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/mealLinear_Main">
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginRight="16dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/timeTableTv_Main"
+                        style="@style/boldTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="15dp"
+                        android:layout_weight="1"
+                        android:gravity="left|bottom"
+                        android:paddingBottom="5dp"
+                        android:text="ㅁㅁㅁ님의 시간표"
+                        android:textSize="18sp" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="15"
+                        android:rotationY="180"
+                        android:src="@drawable/back_arrow" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/timeTableRecycler_Main"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="10dp"
+                    android:paddingLeft="10dp"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:spanCount="4"
+                    tools:itemCount="8"
+                    tools:listitem="@layout/timetable_item" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/popContentsLinear_Main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/main_item_style"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/timeTableLinear_Main">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginRight="16dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/boldTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="15dp"
+                        android:layout_weight="1"
+                        android:gravity="left|bottom"
+                        android:paddingBottom="5dp"
+                        android:text="인기글"
+                        android:textSize="18sp" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="15"
+                        android:rotationY="180"
+                        android:src="@drawable/back_arrow" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    app:fastScrollEnabled="false"
+                    android:id="@+id/popContentsRecycle_Main"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="10dp"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/popcontents_item"
+                    />
+
+            </LinearLayout>
+
+            <ImageView
+                android:scaleType="fitEnd"
+                android:background="@drawable/main_item_style"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/popContentsLinear_Main"
+                android:layout_marginTop="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="35dp"
+                android:src="@drawable/_888"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav_Main"
         android:layout_width="match_parent"
         android:layout_height="47dp"
         android:background="@drawable/bottomnavigationbar_style"

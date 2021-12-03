@@ -14,14 +14,19 @@
         <entry key="..\:/Users/sjcal/AndroidStudioProjects/hanlight-AOS-v2/app/src/main/res/drawable/edittext_success_style.xml" value="0.37538461538461537" />
         <entry key="..\:/Users/sjcal/AndroidStudioProjects/hanlight-AOS-v2/app/src/main/res/drawable/ic_launcher_background.xml" value="0.21666666666666667" />
         <entry key="..\:/Users/sjcal/AndroidStudioProjects/hanlight-AOS-v2/app/src/main/res/drawable/main_item_style.xml" value="0.38125" />
+        <entry key="..\:/Users/sjcal/AndroidStudioProjects/hanlight-AOS-v2/app/src/main/res/drawable/timetable_select_style.xml" value="0.37538461538461537" />
+        <entry key="..\:/Users/sjcal/AndroidStudioProjects/hanlight-AOS-v2/app/src/main/res/drawable/timetable_style.xml" value="0.37538461538461537" />
         <entry key="..\:/Users/sjcal/AndroidStudioProjects/hanlight-AOS-v2/app/src/main/res/layout-v26/activity_signup.xml" value="0.33796296296296297" />
         <entry key="..\:/Users/sjcal/AndroidStudioProjects/hanlight-AOS-v2/app/src/main/res/layout/activity_login.xml" value="0.33" />
-        <entry key="..\:/Users/sjcal/AndroidStudioProjects/hanlight-AOS-v2/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/sjcal/AndroidStudioProjects/hanlight-AOS-v2/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/sjcal/AndroidStudioProjects/hanlight-AOS-v2/app/src/main/res/layout/activity_reset_passwrod.xml" value="0.33" />
         <entry key="..\:/Users/sjcal/AndroidStudioProjects/hanlight-AOS-v2/app/src/main/res/layout/activity_search_id.xml" value="0.3651041666666667" />
         <entry key="..\:/Users/sjcal/AndroidStudioProjects/hanlight-AOS-v2/app/src/main/res/layout/activity_search_password.xml" value="0.5" />
         <entry key="..\:/Users/sjcal/AndroidStudioProjects/hanlight-AOS-v2/app/src/main/res/layout/activity_signup.xml" value="0.33" />
         <entry key="..\:/Users/sjcal/AndroidStudioProjects/hanlight-AOS-v2/app/src/main/res/layout/activity_signup2.xml" value="0.3090601185436071" />
+        <entry key="..\:/Users/sjcal/AndroidStudioProjects/hanlight-AOS-v2/app/src/main/res/layout/notice_item.xml" value="0.33" />
+        <entry key="..\:/Users/sjcal/AndroidStudioProjects/hanlight-AOS-v2/app/src/main/res/layout/popcontents_item.xml" value="0.5" />
+        <entry key="..\:/Users/sjcal/AndroidStudioProjects/hanlight-AOS-v2/app/src/main/res/layout/timetable_item.xml" value="0.25" />
         <entry key="..\:/Users/sjcal/AndroidStudioProjects/hanlight-AOS-v2/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.38125" />
         <entry key="..\:/Users/sjcal/AndroidStudioProjects/hanlight-AOS-v2/app/src/main/res/xml/network_security_config.xml" value="0.3651041666666667" />
         <entry key="..\:/android/hanlight-AOS-v2/app/src/main/res/drawable/edittext_success_style.xml" value="0.561025641025641" />
